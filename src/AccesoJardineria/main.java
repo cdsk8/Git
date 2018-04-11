@@ -18,11 +18,7 @@ public class main {
 		         System.err.println("Failed to create sessionFactory object." + ex);
 		         throw new ExceptionInInitializerError(ex); 
 		      }
-	      Scanner scan=new Scanner(System.in);
-	      String nombre=scan.nextLine();
-	      String apellidos=scan.nextLine();
-	      String direccion=scan.nextLine();
-ManageCliente.addCliente(nombre, apellidos, direccion);
+
 	    
 	   }
 

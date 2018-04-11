@@ -22,8 +22,9 @@ public class main {
 	      String nombre=scan.nextLine();
 	      String apellidos=scan.nextLine();
 	      String direccion=scan.nextLine();
+	      for (int i=0;i<5;i++)
 ManageCliente.addCliente(nombre, apellidos, direccion);
-	    
+	 ManageCliente.listEmployees();
 	   }
 
 
