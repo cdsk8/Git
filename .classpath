@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="C:/Users/xxcds/Desktop/hibernate-release-5.2.16.Final/lib/jpa-metamodel-generator/hibernate-jpamodelgen-5.2.16.Final.jar"/>
 	<classpathentry kind="lib" path="C:/Users/xxcds/Desktop/mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar"/>
 	<classpathentry kind="lib" path="C:/Users/xxcds/Desktop/jdbc2_0-stdext.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xxcds/Desktop/sqljdbc42.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
