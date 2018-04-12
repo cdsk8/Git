@@ -10,6 +10,6 @@
   <property name="hibernate.connection.pool_size">1</property>
   <property name="hibernate.show_sql">true</property>
   <property name="hibernate.connection.password"/>
-  <mapping class="testAccesoprueba.Cliente"/>
+  <mapping class="AccesoJardineria.Cliente"/>
  </session-factory>
 </hibernate-configuration>

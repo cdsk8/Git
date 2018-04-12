@@ -8,11 +8,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/*Esta es la clase que mapea un objeto de JAVA a una tabla de MYSQL. Hay mas metodos como archivos xml para hacer lo mismo que aqui. Cada clase que se quiera mapear empezara con @Entity. Se debe hacer antes de nada, despues de los imports.*/
 @Entity
-@Table(name = "clientes")
+@Table(name = "clientes") // Con la anotacion @Table referenciamos a una tabla del servidor. Podemos
+							// añadirlos entre parentesis y el valor entre comillas || More
+							// info----->http://docs.jboss.org/hibernate/stable/annotations/reference/en/html_single/
 public class Cliente {
-
-	@Column(name = "CodigoCliente")
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "CodigoCliente") // Relacionamos la variable privada codigocliente con una columna de nombre CodigoCliente. Los nombres de las tablas no son CaseSensitive
 	private int codigocliente;
 
 	@Column(name = "NombreCliente")
@@ -54,11 +58,33 @@ public class Cliente {
 	@Column(name = "LimiteCredito")
 	private float limitecredito;
 
-	public Cliente(int codigocliente,String nombrecliente, String nombrecontacto, String apellidocontacto, String telefono, String fax,
-			String lineadireccion1, String lineadireccion2, String ciudad, String region, String pais,
-			String codigopostal, int codigoempleadorepventas, float limitecredito) {
+	
+	
+	/*
+	 * 
+	 * 
+	 * Se crean dos constructores de la clase cliente. Uno entero y otro vacio.
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * */
+	
+	
+
+	public Cliente() {
 		super();
-this.codigocliente=codigocliente;
+	}
+	
+	public Cliente(int codigocliente, String nombrecliente, String nombrecontacto, String apellidocontacto,
+			String telefono, String fax, String lineadireccion1, String lineadireccion2, String ciudad, String region,
+			String pais, String codigopostal, int codigoempleadorepventas, float limitecredito) {
+		super();
+		this.codigocliente = codigocliente;
 		this.nombrecliente = nombrecliente;
 		this.nombrecontacto = nombrecontacto;
 		this.apellidocontacto = apellidocontacto;
@@ -186,7 +212,4 @@ this.codigocliente=codigocliente;
 		this.limitecredito = limitecredito;
 	}
 
-	public Cliente() {
-		super();
-	}
 }
