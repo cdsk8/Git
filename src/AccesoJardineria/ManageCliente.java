@@ -3,6 +3,8 @@ package AccesoJardineria;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.persistence.Query;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -31,7 +33,7 @@ public class ManageCliente {
 		return clienteId;
 	}
 
-	public static void listEmployees() {
+	public static void listAllClientes() {
 		Session session = main.sessionFactory.openSession();
 		Transaction tx = null;
 
@@ -63,6 +65,36 @@ public class ManageCliente {
 		} finally {
 			session.close();
 		}
+	}
+	public static void findCliente(int codigocliente) {
+		Session session = main.sessionFactory.openSession();
+		Transaction tx = null;
+		
+		try {
+			tx = session.beginTransaction();
+
+String hql="from Cliente where codigocliente= :codigocliente";
+Query query=session.createQuery(hql);
+query.setParameter("codigocliente", codigocliente);
+List<Cliente> clientes=query.getResultList();
+for(Iterator iterator = clientes.iterator(); iterator.hasNext();) {
+	Cliente cliente= (Cliente) iterator.next();
+System.out.println(cliente.toString());
+
+}
+tx.commit();
+	} catch (HibernateException e) {
+		if (tx != null)
+			tx.rollback();
+		e.printStackTrace();
+	} finally {
+		session.close();
+	}
+		
+		
+		
+		
+		
 	}
 
 }

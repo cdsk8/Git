@@ -18,7 +18,7 @@ public class main {
 		         System.err.println("Failed to create sessionFactory object." + ex);
 		         throw new ExceptionInInitializerError(ex); 
 		      }
-ManageCliente.listEmployees();
+ManageCliente.findCliente(23);
 	    
 	   }
 

@@ -100,6 +100,15 @@ public class Cliente {
 		this.limitecredito = limitecredito;
 	}
 
+	@Override
+	public String toString() {
+		return "Cliente [codigocliente=" + codigocliente + ", nombrecliente=" + nombrecliente + ", nombrecontacto="
+				+ nombrecontacto +"\n"+ "apellidocontacto=" + apellidocontacto + ", telefono=" + telefono + ", fax=" + fax
+				+"\n"+ "lineadireccion1=" + lineadireccion1 + ", lineadireccion2=" + lineadireccion2 + "\n"+"ciudad=" + ciudad
+				+ ", region=" + region + ", pais=" + pais + ", codigopostal=" + codigopostal
+				+"\n"+ "codigoempleadorepventas=" + codigoempleadorepventas + ", limitecredito=" + limitecredito + "]";
+	}
+
 	public int getCodigocliente() {
 		return codigocliente;
 	}
